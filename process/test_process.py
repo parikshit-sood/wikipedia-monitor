@@ -2,7 +2,7 @@ import pytest
 import json
 from unittest.mock import MagicMock
 
-# Import main driver function
+# Import process module components
 from .process import run_process
 from . import config
 
