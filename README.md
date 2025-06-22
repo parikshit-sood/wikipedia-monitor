@@ -31,15 +31,39 @@ The project follows a classic, robus stream-processing pattern that separates co
 -   **Infrastructure:**
     -   **Redis:** In-memory data store and message broker
     -   **Docker:** For running Redis and containerizing services
-    -   **Supervisor:** For managing and daemonizing the Python services on a server.
+    -   **Supervisor:** For managing and daemonizing the Python services on an AWS server.
 
 ## Getting Started
 
-TODO
+**Note**: Currently debugging the AWS deployment, so when that is ready, you will be able to access the deployed web application without this cloning process!
+
+Clone this repository:
+```bash
+git clone https://github.com/parikshit-sood/wikipedia-monitor.git
+```
+
+Move into the project root:
+```bash
+cd wikipedia-monitor
+```
+
+Then, in 3 separate terminal windows, run:
+```bash
+python -m ingest.ingest
+```
+
+```bash
+python -m process.process
+```
+
+```bash
+streamlit run dashboard/dashboard.py
+```
 
 ## Configuration
 
-TODO
+The `config.py` files in [ingest/](ingest/) and [process/](process/) have configuration information for Redis and the data stream being read.
+**Modifying the code in those files will change the performance and behavior of the application.**
 
 ## License
 
